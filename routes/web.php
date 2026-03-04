@@ -4,7 +4,9 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\OrderController;
+// use Illuminate\Support\Facades\Cookie;
 
+// $csrfToken = Cookie::getToken();
 
 Route::prefix('api')->group(function () {
 
@@ -15,22 +17,22 @@ Route::prefix('api')->group(function () {
     Route::get('/total-co2-saved', [ProductController::class, 'getTotalCo2Saved']);
     
     // Rotta per creare un nuovo prodotto
-    Route::post('/products', [ProductController::class, 'create']);  
+    // Route::post('/products', [ProductController::class, 'create']);  
     
     // Rotta per eliminare un prodotto
-    Route::delete('/products', [ProductController::class, 'delete']);
+    // Route::delete('/products', [ProductController::class, 'delete']);
     
     // Rotta per leggere tutti i prodotti
     Route::get('/products', [ProductController::class, 'read']);
     
     // Rotta per aggiornare un prodotto
-    Route::put('/products/{id}', [ProductController::class, 'update']);
+    // Route::put('/products/{id}', [ProductController::class, 'update']);
 
-    Route::post('/orders', [OrderController::class, 'create']);
+    // Route::post('/orders', [OrderController::class, 'create']);
     
-    Route::delete('/orders/{id}', [OrderController::class, 'delete']);
+    // Route::delete('/orders/{id}', [OrderController::class, 'delete']);
     
     Route::get('/orders', [OrderController::class, 'read']);
     
-    Route::put('/orders/{id}', [OrderController::class, 'update']);
+    // Route::put('/orders/{id}', [OrderController::class, 'update']);
 });

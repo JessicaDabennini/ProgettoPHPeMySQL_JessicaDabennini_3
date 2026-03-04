@@ -36,7 +36,7 @@ public function co2(Request $request)
         ]);
     }
 
- public function getTotalCo2Saved(Request $request)
+ public function getTotalCo2Saved(Request $request) 
     {
         $totalCo2Saved = Orders::getTotalCo2Saved(
             $request->start_date,

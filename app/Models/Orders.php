@@ -8,6 +8,8 @@ class Orders extends Model
 {
     protected $table = 'orders';
 
+    public $timestamps = false;
+
     protected $fillable = [
         'sales_date',
         'destination_country',
