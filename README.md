@@ -61,37 +61,34 @@ Le API seguono rigorosamente l'architettura RESTful, utilizzando i seguenti prin
 #### Ordini
 
 - **leggere la tabella degli ordini**
-- **Endpoint**: `GET /order/readOrder.php`
+- **Endpoint**: `GET /api/orders`
 
 
 - **Inserimento di un ordine**
-  - **Endpoint**: `POST /order/createOrder.php`
+  - **Endpoint**: `POST /api/orders`
   - **Body**: 
     ```json
     { "sales_date": "2025-01-01", "destination_country": "Italia", "product_id":1, "quantity":23}
     ```
 
 - **Modifica di un ordine**
-  - **Endpoint**: `/order/updateOrder.php`
+  - **Endpoint**: `/api/orders/{id}`
   - **Body**: 
     ```json
     { "sales_date": "nuovaData", "destination_country": "nuovoPaese", "product_id":2, "quantity":22}
     ```
 
 - **Cancellazione di un ordine**
-  - **Endpoint**: `DELETE /order/deleteOrder.php`
-   - **Body**: 
-    ```json
-    { "id": 1 }
-    ```
+  - **Endpoint**: `DELETE /orders/{id}`
 
+  
 #### Visualizzazione CO₂ Risparmiata
 
 - **Counter totale CO₂ risparmiata**
-  - **Endpoint**: `GET /product/co2tot_counter.php`
+  - **Endpoint**: `GET /total-co2-saved`
 
-- **Totale CO₂ risparmiata**
-  - **Endpoint**: `GET /product/co2.php`
+- **Totale CO₂ risparmiata per ordine**
+  - **Endpoint**: `GET /co2`
   - **Parametri**: 
     ```
     ?start_date=2023-01-01&end_date=2023-12-31&country=Italia&product=NomeProdotto
